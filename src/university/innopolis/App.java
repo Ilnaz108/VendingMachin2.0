@@ -18,18 +18,41 @@ public class App {
         int type1 = scanner.nextInt();
         String next;
         String str = "Drink";
+
         switch (type1) {
             case 1: {
-                Drink drink1 = Drink.CHICORY;
-                Drink drink2 = Drink.COFFEE;
-                Drink drink3 = Drink.JUICE;
-                Drink drink4 = Drink.MILK;
-                Drink drink5 = Drink.WATER;
-                System.out.println(Arrays.toString(Drink.values()));
+                for (Drink c : Drink.values()) {
+                    System.out.println(c.getNum() + ". " + c.name() + ": " + c.getCost() + " Р.");
+                }
                 break;
             }
             case 2: {
                 System.out.println("Внесите купюру на внутренний счет");
+                Integer balance = 0;
+                while (scanner.hasNextInt()) {
+                    System.out.println("Вы внесли " + scanner.nextInt() + " руб.\n" +
+                            "Выберите напиток");
+                    for (Drink c : Drink.values()) {
+                        System.out.println(c.getNum() + ". " + c.name() + ": " + c.getCost() + " Р.");
+                    }
+                    break;
+                    if (type1 == 1) {
+                        System.out.println("Вы выбрали кофе");
+                    }
+                    if (type1 == 2) {
+                        System.out.println("Вы выбрали молочко");
+                    }
+                    if (type1 == 3) {
+                        System.out.println("Вы выбрали цикорий");
+                    }
+                    if (type1 == 4) {
+                        System.out.println("Вы выбрали воду");
+                    }
+                    if (type1 == 5) {
+                        System.out.println("Вы выбрали сок");
+                    }
+                }
+            }
                 int type2 = scanner.nextInt();
                 Scanner scanner1 = new Scanner(System.in);
                 switch (type2) {
@@ -39,26 +62,17 @@ public class App {
                     }
                 }
                 break;
+
+            case 3: {
+                System.out.println(Arrays.toString(Drink.values()));
+                break;
             }
-            case 3:
-                Drink a = Drink.valueOf("COFFEE");
-                switch (a) {
-                    case COFFEE:
-                        System.out.println("Вы выбрали кофе");
-                    case WATER:
-                        System.out.println("Вы выбрали воду");
-                    case JUICE:
-                        System.out.println("Вы выбрали сок");
-                    case MILK:
-                        System.out.println("Вы выбрали молочко");
-                    case CHICORY:
-                        System.out.println("Вы выбрали цикорий");
-                        break;
-                }
+
             default: {
                 System.out.println("Вы ввели не корректное значение");
-
             }
         }
+
+
     }
 }
