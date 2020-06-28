@@ -1,6 +1,8 @@
 package university.innopolis;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.lang.Enum.*;
 
@@ -16,6 +18,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int result;
         int type1 = scanner.nextInt();
+        boolean success;
         String next;
         String str = "Drink";
 
@@ -28,30 +31,32 @@ public class App {
             }
             case 2: {
                 System.out.println("Внесите купюру на внутренний счет");
-                Integer balance = 0;
-                while (scanner.hasNextInt()) {
-                    System.out.println("Вы внесли " + scanner.nextInt() + " руб.\n" +
+                Integer balance = scanner.nextInt();;
+                do  {
+
+
+                    success = Boolean.FALSE;
+                    List<String> avaliable = new ArrayList<>();
+                    System.out.println("Вы внесли " + balance + " руб.\n" +
                             "Выберите напиток");
+
                     for (Drink c : Drink.values()) {
-                        System.out.println(c.getNum() + ". " + c.name() + ": " + c.getCost() + " Р.");
+                        System.out.println(c.getNum() + ". " + c.getTitle() + ": " + c.getCost() + " Р.");
+                        avaliable.add(String.valueOf(c.getNum()));
                     }
-                    break;
-                    if (type1 == 1) {
-                        System.out.println("Вы выбрали кофе");
+                    Integer localType = scanner.nextInt();
+                    for (Drink value : Drink.values()) {
+                        if (localType.equals(value.getNum())) {
+                            System.out.println("Вы выбрали " + value.getTitle());
+                            success = Boolean.TRUE;
+
+                        } else {
+                            System.out.println("выберите значени из списка " + avaliable.toString());
+                            success = Boolean.FALSE;
+                        }
                     }
-                    if (type1 == 2) {
-                        System.out.println("Вы выбрали молочко");
-                    }
-                    if (type1 == 3) {
-                        System.out.println("Вы выбрали цикорий");
-                    }
-                    if (type1 == 4) {
-                        System.out.println("Вы выбрали воду");
-                    }
-                    if (type1 == 5) {
-                        System.out.println("Вы выбрали сок");
-                    }
-                }
+
+                } while (!success);
             }
                 int type2 = scanner.nextInt();
                 Scanner scanner1 = new Scanner(System.in);

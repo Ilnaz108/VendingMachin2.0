@@ -1,19 +1,16 @@
 package university.innopolis;
 
 public enum Drink {
-    COFFEE(20, 1), MILK(25, 2), CHICORY(35, 3), WATER(30, 4), JUICE(40, 5);
+    COFFEE(20, 1, "Кофе"), MILK(25, 2, "Молоко"), CHICORY(35, 3, "Цикорий"),
+    WATER(30, 4, "Вода"), JUICE(40, 5, "Сок");
 
-    private String title;
     private int cost;
     private int num;
+    private String title;
 
-    Drink(String title, int cost) {
+
+    Drink(int cost, int num, String title) {
         this.title = title;
-        this.num = ordinal();
-    }
-
-    Drink(int cost, int num) {
-        this.title = name();
         this.num = num;
         this.cost = cost;
     }
