@@ -26,4 +26,13 @@ public enum Drink {
     public int getNum() {
         return num;
     }
+
+    public static String getNameByNumber(int num){
+        for (Drink value : Drink.values()) {
+            if (num == value.getNum()) {
+                return value.getTitle();
+            }
+        }
+        return null;
+    }
 }
