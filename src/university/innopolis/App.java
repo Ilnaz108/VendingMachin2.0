@@ -28,8 +28,9 @@ public class App {
             case 2: {
                 avaliable.clear();
                 System.out.println("Внесите купюру на внутренний счет");
-                Integer balance = scanner.nextInt();;
-                do  {
+                Integer balance = scanner.nextInt();
+
+                do {
                     System.out.println("Вы внесли " + balance + " руб.\n" +
                             "Выберите напиток");
                     for (Drink c : Drink.values()) {
@@ -41,7 +42,7 @@ public class App {
                         System.out.println("Вы выбрали " + Drink.getNameByNumber(localType));
                         break;
                     } else {
-                         System.out.println("выберите значени из списка " + avaliable.toString());
+                        System.out.println("выберите значени из списка " + avaliable.toString());
                     }
 
                 } while (true);
@@ -55,7 +56,5 @@ public class App {
                 System.out.println("Вы ввели не корректное значение");
             }
         }
-
-
     }
 }
