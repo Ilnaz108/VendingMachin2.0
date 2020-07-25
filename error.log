@@ -1,0 +1,3 @@
+2020.07.24 15:56:03My first mistake!
+Exception in thread "main" java.lang.RuntimeException: My second mistake!
+	at university.innopolis.Log.main(Log.java:15)

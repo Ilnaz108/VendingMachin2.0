@@ -4,9 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.lang.Enum.*;
+import java.util.logging.Logger;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 public class App {
+    /*private Logger log = LoggerFactory.getLogger(MyClass.class);
+    log.error( "Error during some job!!", e)*/
+
+
+
 
 
     public static void main(String[] args) {
@@ -24,6 +31,7 @@ public class App {
                     System.out.println(c.getNum() + ". " + c.name() + ": " + c.getCost() + " Р.");
                 }
                 break;
+
             }
             case 2: {
                 avaliable.clear();
@@ -57,4 +65,5 @@ public class App {
             }
         }
     }
+
 }
