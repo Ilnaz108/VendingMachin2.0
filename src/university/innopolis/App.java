@@ -1,20 +1,21 @@
 package university.innopolis;
 
+//import com.sun.org.slf4j.internal.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Logger;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 
 public class App {
-    /*private Logger log = LoggerFactory.getLogger(MyClass.class);
-    log.error( "Error during some job!!", e)*/
-
-
-
-
+    private static Logger log = LogManager.getLogger(App.class);
+   // private static Logger log = LoggerFactory.getLogger(App.class);
+   // log.error( "Error during some job!!", e);
+//XML,
 
     public static void main(String[] args) {
         System.out.println("Что вы хотите:\n" +
@@ -24,6 +25,10 @@ public class App {
                 "Внимание! Автомат сдачи не выдает");
         Scanner scanner = new Scanner(System.in);
         int type1 = scanner.nextInt();
+        log.warn("type1 = " + type1);
+        log.warn("My infinity mistake!");
+
+
         List<Integer> avaliable = new ArrayList<>();
         switch (type1) {
             case 1: {

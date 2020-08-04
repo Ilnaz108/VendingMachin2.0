@@ -1,26 +1,28 @@
 package university.innopolis;
 
+import com.sun.org.slf4j.internal.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
 import sun.applet.Main;
 
 import java.io.FileInputStream;
 import java.util.logging.LogManager;
-import java.util.logging.Logger;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+import java.util.logging.LogManager;
+//import java.util.logging.LogManager;
+//import java.util.logging.Logger;
+
 
 class Log {
     static Logger LOGGER;
 
     static {
         try (FileInputStream ins = new FileInputStream("C:\\log.config")) { //полный путь до файла с конфигами
-            LogManager.getLogManager().readConfiguration(ins);
-            LOGGER = Logger.getLogger(Main.class.getName());
+   //         LogManager.getLogManager().readConfiguration(ins);
+            LOGGER = LoggerFactory.getLogger(Log.class);
         } catch (Exception ignore) {
             ignore.printStackTrace();
         }
     }
 }
-
 
 
 
